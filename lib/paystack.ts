@@ -67,3 +67,4 @@ export const verifyPaystackWebhook = (payload: string, signature: string) => {
     .digest('hex');
   return hash === signature;
 };
+
