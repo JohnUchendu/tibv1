@@ -36,7 +36,7 @@ export default function Landing() {
               BUILD TRUST
             </span>
             <br />
-            <span className="text-green-600">UNLOCK ₦₦₦</span>
+            <span className="text-green-600">UNLOCKING ₦6 Billion</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-8 font-medium">
             WhatsApp traders: <span className="text-red-600 font-bold">NO MORE SCAMS.</span> Get rated. Show lenders. Get loans.
@@ -77,7 +77,7 @@ export default function Landing() {
         </div>
       </section>
 
-      // Add this section to your app/page.tsx after the hero
+      {/* // Add this section to your app/page.tsx after the hero */}
 <section className="py-16 px-4 bg-white">
   <div className="max-w-4xl mx-auto">
     <h2 className="text-3xl md:text-4xl font-black text-center mb-12">

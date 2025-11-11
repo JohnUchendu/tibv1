@@ -1,28 +1,17 @@
-// public/sw.js
-const CACHE_NAME = 'trust-app-v1';
-const urlsToCache = [
-  '/',
-  '/dashboard',
-  '/login',
-  '/manifest.json'
-];
+// public/sw.js - Simple version
+const CACHE_NAME = 'trust-v1';
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(urlsToCache))
-  );
+  console.log('Service Worker installing');
+  self.skipWaiting(); // Activate immediately
+});
+
+self.addEventListener('activate', (event) => {
+  console.log('Service Worker activating');
+  event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      }
-    )
-  );
+  // Optional: Add caching strategies here
+  event.respondWith(fetch(event.request));
 });

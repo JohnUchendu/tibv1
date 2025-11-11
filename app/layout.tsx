@@ -4,6 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import AuthProvider from "@/components/AuthProvider";
 import "./globals.css";
 import TestimonialToasts from "@/components/TestimonialToast";
+import InstallPrompt from "@/components/InstallPrompt";
+// import PWADebug from "@/components/PWADebug";
+import ServiceWorker from "@/components/ServiceWorker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +42,10 @@ export default function RootLayout({
       >
         <AuthProvider>
           {children}
+          <InstallPrompt />
           <TestimonialToasts />
+          {/* <PWADebug /> */}
+          <ServiceWorker />
         </AuthProvider>
       </body>
     </html>
